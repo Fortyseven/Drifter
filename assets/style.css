@@ -41,6 +41,7 @@ form label > span {
     font-weight: bold;
     display:     block;
     text-align:  left;
+    text-shadow: 1px 1px darkred;
 }
 
 form label {
