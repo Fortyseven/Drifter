@@ -12,6 +12,7 @@
     <script type="text/javascript" src="js/drifter.js"></script>
     <style>
         body { margin: 0px; padding: 0px; background: black; }
+        canvas { pointer-events:none; }
     </style>
 </head>
 <body>
