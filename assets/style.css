@@ -1,0 +1,87 @@
+@import url(http://fonts.googleapis.com/css?family=Eater);
+@import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
+
+body {
+    background:       darkred url("background.jpg");
+    background-size:  cover;
+    font-family:      sans-serif;
+}
+
+#Header {
+    font-family:    Eater, sans-serif;
+    font-size:      6em;
+    text-align:     center;
+    color:          white;
+    line-height: 1em;
+    text-shadow:    3px 3px darkgreen;
+}
+
+#Header .subheading {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size:   0.25em;
+}
+
+form {
+    text-align:   center;
+    width:        75%;
+    margin-left:  auto;
+    margin-right: auto;
+    color:        white;
+    max-width:    800px;
+}
+
+form label {
+    display:      block;
+    width:        75%;
+    margin-left:  auto;
+    margin-right: auto;
+}
+
+form label > span {
+    font-weight: bold;
+    display:     block;
+    text-align:  left;
+}
+
+form label {
+    padding-top: 1em;
+}
+
+form label > input[type="text"] {
+    width:         100%;
+    padding:       0.25em;
+    font-style:    italic;
+    border-radius: 0.5em;
+}
+
+input[type="checkbox"] {
+    width:  2em;
+    height: 2em;
+    float:  left;
+}
+
+form input[type="submit"] {
+    font-size:      1.5em;
+    font-family:    'Press Start 2P', sans-serif;
+    color:          white;
+    border:         1px solid green;
+    padding:        0.5em;
+    margin-left:    auto;
+    margin-right:   auto;
+    text-transform: uppercase;
+    background:     darkgreen;
+    border-radius:  0.5em;
+    box-shadow:     2px 2px black;
+}
+
+form input[type="submit"]:hover {
+    position:   relative;
+    background: green;
+    top:        0.1em;
+    left:       0.1em;
+    box-shadow: 0 0 10px white;
+}
+
+form div.form_submit {
+    clear: both;
+}

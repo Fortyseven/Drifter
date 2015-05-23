@@ -1,5 +1,5 @@
 const NUM_FLAKES = 100;
-const FRAME_DELAY = 75;
+const FRAME_DELAY = 50;
 
 var snow_x = new Array( NUM_FLAKES );
 var snow_xvel = new Array( NUM_FLAKES );
@@ -10,8 +10,8 @@ var snow_size = new Array( NUM_FLAKES );
 
 var window_width = 0, window_height = 0;
 
-var ctx = null;
 var canvas = null;
+var ctx = null;
 
 var c = 0; // Incremented each updateMove loop
 
@@ -22,7 +22,9 @@ $( document ).ready( function ()
 
     canvas = $( "<canvas style='position:absolute; z-index:999; top:0; left: 0' width='" + window_width + "' height='" + window_height + "'></canvas>" )[ 0 ];
 
-    $( "body" ).prepend( canvas );
+    var audio = $( '<audio src="assets/music.mp3" autoplay="true" loop="true"/>' );
+
+    $( "body" ).prepend( canvas ).prepend( audio );
 
     ctx = canvas.getContext( "2d" );
 
@@ -40,12 +42,10 @@ $( document ).ready( function ()
 
 function updateMove()
 {
-    var ox, oy, wo;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect( 0, 0, canvas.width, canvas.height );
 
     for ( var i = 0; i < NUM_FLAKES; i++ ) {
-        wo = Math.sin( c * 0.1 ) * (Math.random() * 5);
+        var wo = Math.sin( c * 0.1 ) * (Math.random() * 5);
 
         snow_x[ i ] += (snow_xvel[ i ] + wo);
         if ( snow_x[ i ] > (window_width - snow_size[ i ]) ) {
