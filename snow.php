@@ -1,6 +1,8 @@
 <?php
 
-    if (empty($_GET['url'])) header("Location: index.php");
+    $site = trim( $_GET[ 'url' ] );
+
+    if ( empty( $site ) ) header( "Location: index.php" );
 
     //    if ( empty( $_GET[ 'url' ] ) ) {
     //        $site = "http://google.com/";
