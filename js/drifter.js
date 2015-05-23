@@ -38,7 +38,7 @@ $( document ).ready( function ()
         snow_div[ i ].css( "width", snow_size[ i ] );
         snow_div[ i ].css( "height", snow_size[ i ] );
         snow_div[ i ].css( "background", "white" );
-        snow_div[ i ].css( "opacity", Math.random() * 1 );
+        snow_div[ i ].css( "opacity", Math.random() ); // 0..1
     }
 
     setInterval( updateMove, FRAME_DELAY );
