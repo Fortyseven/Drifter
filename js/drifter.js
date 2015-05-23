@@ -29,7 +29,7 @@ $( document ).ready( function ()
 
         snow_twist[ i ] = 0;
 
-        $( "body" ).append( "<div id='SnowFlake" + i + "'><!-- --></div>" );
+        $( "body" ).append( "<div id='SnowFlake" + i + "'></div>" );
         snow_div[ i ] = $( document ).find( "#SnowFlake" + i );
 
         snow_div[ i ].css( "position", "absolute" );
