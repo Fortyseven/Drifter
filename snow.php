@@ -23,16 +23,10 @@
     </style>
 </head>
 <body>
-<iframe border="0" frameborder="0" noborder="noborder" width="100%" height="100%"
-        spacing="0" padding="0" src="<?php echo $site ?>"></iframe>
-<?php if ( !$_GET[ 'silence' ] ): ?>
-<!--    <div style="width:0px; height:0px">-->
-<!--        <object width="0" height="0">-->
-<!--            <param name="movie" value="music.swf">-->
-<!--            <embed src="music.swf" width="0" height="0"></embed>-->
-<!--        </object>-->
-<!--    </div>-->
-
+<iframe border="0" frameborder="0" noborder="noborder" width="100%" height="100%" spacing="0" padding="0"
+        src="<?php echo $site ?>"></iframe>
+<?php if ( empty( $_GET[ 'silence' ] ) ): ?>
+    <audio src="assets/music.mp3" autoplay="true" loop="true"/>
 <?php endif; ?>
 </body>
 </html>
