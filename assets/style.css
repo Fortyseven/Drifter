@@ -31,13 +31,15 @@ canvas {
     font-size:   0.25em;
 }
 
-form {
-    text-align:   center;
-    width:        75%;
+#Content {
+    max-width:    800px;
     margin-left:  auto;
     margin-right: auto;
-    color:        white;
-    max-width:    800px;
+}
+
+form {
+    text-align: center;
+    color:      white;
 }
 
 form label {
@@ -95,4 +97,20 @@ form input[type="submit"]:hover {
 
 form div.form_submit {
     clear: both;
+}
+
+.github {
+    text-align:  right;
+    font-weight: bold;
+    font-size:   0.8em;
+    font-style:  italic;
+}
+
+.github a {
+    color:       cyan;
+    text-shadow: 1px 1px 3px black;
+}
+
+.github a:hover {
+    color: white;
 }
