@@ -1,6 +1,9 @@
 const NUM_FLAKES = 100;
 const FRAME_DELAY = 50;
 
+var get_url = false;
+var get_silence = false;
+
 var snow_x = new Array( NUM_FLAKES );
 var snow_xvel = new Array( NUM_FLAKES );
 var snow_y = new Array( NUM_FLAKES );
@@ -15,16 +18,45 @@ var ctx = null;
 
 var c = 0; // Incremented each updateMove loop
 
-$( document ).ready( function ()
+/************************************************************/
+$( document ).ready(
+        function ()
+        {
+            get_url = getQueryVariable( "url" );
+            get_silence = getQueryVariable( "silence" );
+
+            if ( get_url != false ) {
+                startDrifting();
+            }
+        }
+);
+
+
+/************************************************************/
+function startDrifting()
 {
+    $( "body" ).remove();
+
+    var body = $( "<body>" );
+    body.addClass( "active" );
+    $( "html" ).append( body );
+
     window_width = $( window ).width();
     window_height = $( window ).height();
 
+    var iframe = $( '<iframe border="0" frameborder="0" width="100%" height="100%" spacing="0" padding="0" src="' + get_url + '"></iframe>' );
+
     canvas = $( "<canvas style='position:absolute; z-index:999; top:0; left: 0' width='" + window_width + "' height='" + window_height + "'></canvas>" )[ 0 ];
 
-    var audio = $( '<audio src="assets/music.mp3" autoplay="true" loop="true"/>' );
 
-    $( "body" ).prepend( canvas ).prepend( audio );
+    body.prepend( iframe )
+            .prepend( canvas );
+
+
+    if ( !get_silence ) {
+        var audio = $( '<audio src="assets/music.mp3" autoplay="true" loop="true"/>' );
+        body.prepend( audio );
+    }
 
     ctx = canvas.getContext( "2d" );
 
@@ -38,8 +70,9 @@ $( document ).ready( function ()
     }
 
     setInterval( updateMove, FRAME_DELAY );
-} );
+}
 
+/************************************************************/
 function updateMove()
 {
     ctx.clearRect( 0, 0, canvas.width, canvas.height );
@@ -65,4 +98,16 @@ function updateMove()
         ctx.fillRect( x, y, snow_size[ i ], snow_size[ i ] );
     }
     c++;
+}
+
+/************************************************************/
+function getQueryVariable( variable )
+{
+    var query = window.location.search.substring( 1 );
+    var vars = query.split( "&" );
+    for ( var i = 0; i < vars.length; i++ ) {
+        var pair = vars[ i ].split( "=" );
+        if ( pair[ 0 ] == variable ) {return pair[ 1 ];}
+    }
+    return (false);
 }

@@ -1,19 +1,29 @@
 @import url(http://fonts.googleapis.com/css?family=Eater);
 @import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
 
-body {
-    background:       darkred url("background.jpg");
-    background-size:  cover;
-    font-family:      sans-serif;
+.front-page {
+    background:      darkred url("background.jpg");
+    background-size: cover;
+    font-family:     sans-serif;
+}
+
+.active {
+    margin:     0;
+    padding:    0;
+    background: transparent;
+}
+
+canvas {
+    pointer-events: none;
 }
 
 #Header {
-    font-family:    Eater, sans-serif;
-    font-size:      6em;
-    text-align:     center;
-    color:          white;
+    font-family: Eater, sans-serif;
+    font-size:   6em;
+    text-align:  center;
+    color:       white;
     line-height: 1em;
-    text-shadow:    3px 3px darkgreen;
+    text-shadow: 3px 3px darkgreen;
 }
 
 #Header .subheading {
