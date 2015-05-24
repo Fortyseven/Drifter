@@ -44,10 +44,9 @@ function startDrifting()
     window_width = $( window ).width();
     window_height = $( window ).height();
 
-    var iframe = $( '<iframe border="0" frameborder="0" width="100%" height="100%" spacing="0" padding="0" src="' + get_url + '"></iframe>' );
+    var iframe = $( '<iframe border="0" frameborder="0" width="100%" height="100%" spacing="0" padding="0" src="' + decodeURIComponent( get_url ) + '"></iframe>' );
 
     canvas = $( "<canvas style='position:absolute; z-index:999; top:0; left: 0' width='" + window_width + "' height='" + window_height + "'></canvas>" )[ 0 ];
-
 
     body.prepend( iframe )
             .prepend( canvas );
